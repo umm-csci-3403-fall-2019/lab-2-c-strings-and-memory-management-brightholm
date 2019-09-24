@@ -8,6 +8,7 @@ const char* all_vowels = "aeiouAEIOU";
 
 
 int is_vowel(char inp_char){
+
   int vowel_status = 0;
   int j=0;
   for(j=0;all_vowels[j] != '\0';j++){
@@ -31,11 +32,10 @@ char *disemvowel(char *str) {
     }
   }
 
-
   //declare a newstring of consonant count +1 size
   int pos_in_disemvoweled=0;
 
-  disemvoweled_string = (char*) calloc(str_length - vowel_count, sizeof(char));
+  disemvoweled_string = (char*) calloc(str_length - vowel_count+1, sizeof(char));
 
   for(i=0; str[i] != '\0';i++){
     if (is_vowel(str[i]) == 0){
